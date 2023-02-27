@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/IdTitre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="48dp"
+        android:text="Application Calculette"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvNombreA"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:text="Nombre A :"
+        app:layout_constraintBaseline_toBaselineOf="@+id/editNbA"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/editNbA"
+        style="@style/Widget.AppCompat.AutoCompleteTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="53dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginEnd="54dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Saisir le nombre a"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        app:layout_constraintEnd_toEndOf="@+id/IdTitre"
+        app:layout_constraintStart_toStartOf="@+id/rdOperateur"
+        app:layout_constraintTop_toBottomOf="@+id/IdTitre" />
+
+    <EditText
+        android:id="@+id/editNbB"
+        style="@style/Widget.AppCompat.AutoCompleteTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="23dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Saisir le nombre b"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        app:layout_constraintStart_toStartOf="@+id/editNbA"
+        app:layout_constraintTop_toBottomOf="@+id/editNbA" />
+
+    <TextView
+        android:id="@+id/tvNombreB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginBottom="36dp"
+        android:text="Nombre B :"
+        app:layout_constraintBottom_toTopOf="@+id/rdOperateur"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/rdOperateur"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvNombreA"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="27dp"
+        app:layout_constraintStart_toStartOf="@+id/tvNombreB"
+        app:layout_constraintTop_toBottomOf="@+id/editNbB">
+
+        <RadioButton
+            android:id="@+id/rdMultiplication"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/editNbB"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:text="Multiplication"
+            tools:layout_editor_absoluteX="56dp"
+            tools:layout_editor_absoluteY="277dp" />
+
+        <RadioButton
+            android:id="@+id/rdAddition"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/editNbB"
+            android:layout_alignStart="@+id/rdSoustraction"
+            android:layout_alignLeft="@+id/rdSoustraction"
+            android:text="Addition"
+            tools:layout_editor_absoluteX="89dp"
+            tools:layout_editor_absoluteY="326dp" />
+
+        <RadioButton
+            android:id="@+id/rdSoustraction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/editNbB"
+            android:layout_alignStart="@+id/rdMultiplication"
+            android:layout_alignLeft="@+id/rdMultiplication"
+            android:layout_alignBottom="@+id/editNbB"
+            android:text="Soustraction"
+            tools:layout_editor_absoluteX="198dp"
+            tools:layout_editor_absoluteY="277dp" />
+
+        <RadioButton
+            android:id="@+id/rdDivision"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvResultat"
+            android:layout_alignStart="@+id/rdMultiplication"
+            android:layout_alignLeft="@+id/rdMultiplication"
+            android:text="Division"
+            tools:layout_editor_absoluteX="198dp"
+            tools:layout_editor_absoluteY="326dp" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/tvMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:text="Résultat :"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tvResultat"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvResultat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="19dp"
+        android:layout_marginTop="27dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintStart_toEndOf="@+id/tvMessage"
+        app:layout_constraintTop_toBottomOf="@+id/btCalculer" />
+
+    <Button
+        android:id="@+id/btCalculer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="26dp"
+        android:text="Calculer"
+        app:layout_constraintStart_toStartOf="@+id/rdOperateur"
+        app:layout_constraintTop_toBottomOf="@+id/rdOperateur" />
+</RadioGroup>
+</androidx.constraintlayout.widget.ConstraintLayout>

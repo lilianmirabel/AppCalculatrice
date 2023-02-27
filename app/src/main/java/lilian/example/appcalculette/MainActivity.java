@@ -66,5 +66,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 // dans un champ de type TextView
             TextView t = (TextView) findViewById(R.id.tvResultat);
             t.setText(String.valueOf(res));
+
+
         }
     }};
